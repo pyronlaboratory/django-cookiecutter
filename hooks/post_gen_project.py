@@ -42,7 +42,6 @@ def remove_gplv3_files():
     for file_name in file_names:
         os.remove(file_name)
 
-
 def remove_pycharm_files():
     idea_dir_path = ".idea"
     if os.path.exists(idea_dir_path):
