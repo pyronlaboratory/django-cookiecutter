@@ -173,7 +173,6 @@ def set_django_secret_key(file_path):
     )
     return django_secret_key
 
-
 def set_django_admin_url(file_path):
     django_admin_url = set_flag(
         file_path,
@@ -184,7 +183,6 @@ def set_django_admin_url(file_path):
         using_ascii_letters=True,
     )
     return django_admin_url
-
 
 def generate_random_user():
     return generate_random_string(length=32, using_ascii_letters=True)
