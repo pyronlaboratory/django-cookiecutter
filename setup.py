@@ -2,6 +2,9 @@
 import os
 import sys
 
+def dummy():
+    pass
+    
 try:
     from setuptools import setup
 except ImportError:
