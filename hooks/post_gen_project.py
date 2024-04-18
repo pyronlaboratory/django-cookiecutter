@@ -32,8 +32,6 @@ DEBUG_VALUE = "debug"
 
 def remove_open_source_files():
     """
-    removes specified open-source files from a codebase by naming them and invoking
-    the `os.remove()` method for each named file.
 
     """
     file_names = ["CONTRIBUTORS.txt", "LICENSE"]
@@ -42,7 +40,6 @@ def remove_open_source_files():
 
 def remove_gplv3_files():
     """
-    removes files with specified names from a given path.
 
     """
     file_names = ["COPYING"]
@@ -51,7 +48,6 @@ def remove_gplv3_files():
 
 def remove_pycharm_files():
     """
-    removes two directories related to PyCharm, namely `.idea` and `docs/pycharm`.
 
     """
     idea_dir_path = ".idea"
@@ -65,8 +61,6 @@ def remove_pycharm_files():
 
 def remove_docker_files():
     """
-    deletes the directory `compose`, and then removes files with names `local.yml`,
-    `production.yml`, and `.dockerignore`.
 
     """
     shutil.rmtree("compose")
@@ -78,8 +72,6 @@ def remove_docker_files():
 
 def remove_utility_files():
     """
-    removes the 'utility' directory and its contents using the `shutil.rmtree()`
-    method.
 
     """
     shutil.rmtree("utility")
@@ -87,9 +79,6 @@ def remove_utility_files():
 
 def remove_heroku_files():
     """
-    removes specified files from the current directory if certain conditions are
-    met. It checks the file name and contents to determine whether it should be
-    removed when using Travis CI but not Heroku.
 
     """
     file_names = ["Procfile", "runtime.txt", "requirements.txt"]
@@ -105,7 +94,6 @@ def remove_heroku_files():
 
 def remove_gulp_files():
     """
-    removes files with specified names from the system, ignoring any potential errors.
 
     """
     file_names = ["gulpfile.js"]
@@ -115,7 +103,6 @@ def remove_gulp_files():
 
 def remove_packagejson_file():
     """
-    removes specified files from a system.
 
     """
     file_names = ["package.json"]
@@ -125,9 +112,6 @@ def remove_packagejson_file():
 
 def remove_celery_files():
     """
-    removes celery files in a specific location, including `config/celery_app.py`,
-    `{{ cookiecutter.project_slug }}/users/tasks.py`, and `{{ cookiecutter.project_slug
-    }}/users/tests/test_tasks.py`.
 
     """
     file_names = [
@@ -143,7 +127,6 @@ def remove_celery_files():
 
 def remove_dottravisyml_file():
     """
-    removes a configuration file with the name ".travis.yml" from the system.
 
     """
     os.remove(".travis.yml")
@@ -151,7 +134,6 @@ def remove_dottravisyml_file():
 
 def remove_dotgitlabciyml_file():
     """
-    removes the `.gitlab-ci.yml` file from the current directory.
 
     """
     os.remove(".gitlab-ci.yml")
@@ -159,11 +141,9 @@ def remove_dotgitlabciyml_file():
 
 def append_to_project_gitignore(path):
     """
-    adds a file path to the project's `.gitignore` file in the current working
-    directory, separating them with an OS line break.
 
     Args:
-        path (str): path to be added to the project's .gitignore file.
+        path ():
 
     """
     gitignore_file_path = ".gitignore"
@@ -199,37 +179,15 @@ def generate_random_string(
 
 def set_flag(file_path, flag, value=None, formatted=None, *args, **kwargs):
     """
-    modifies a file's contents by replacing a specified string (the `flag`) with
-    a new value (the `value`). It also generates a pseudo-random string when no
-    value is provided and formatting is required.
 
     Args:
-        file_path (str): path to the file that the function will write or read from.
-        flag (str): string that should be replaced by a randomly generated
-            pseudo-random number, which is then written back to the specified file
-            path.
-        value (`object` in the `def` function.): new value to replace the specified
-            `flag` in the file contents.
-            
-            		- If `value` is `None`, it indicates that a secure pseudo-random
-            number generator was not found on the system, and manual intervention
-            may be necessary to set the flag.
-            		- The ` formatted` parameter, if provided, allows for formatting of
-            the random string generated when `value` is set to `None`. The formatting
-            is done using the provided formatting string, which is a Python
-            formatting string.
-            		- The `file_path` parameter specifies the path to the file where the
-            flag will be written.
-            		- The `flag` parameter indicates the flag being set.
-            
-            	These properties of `value` provide additional context for its use
-            in the function.
-        formatted (str): format string that will be used to replace the `flag`
-            with its value if it is not `None`.
+        file_path ():
+        flag ():
+        value ():
+        formatted ():
 
     Returns:
-        str: a modified version of the original file contents with the specified
-        flag replaced by a pseudo-random string.
+        :
 
     """
     if value is None:
@@ -255,16 +213,12 @@ def set_flag(file_path, flag, value=None, formatted=None, *args, **kwargs):
 
 def set_django_secret_key(file_path):
     """
-    sets a Django secret key for use in settings.py based on the input file path
-    provided.
 
     Args:
-        file_path (str): file path where the Django secret key is stored and will
-            be read by the function.
+        file_path ():
 
     Returns:
-        str: a generated Django secret key consisting of 64 digits, using both
-        uppercase and lowercase letters.
+        :
 
     """
     django_secret_key = set_flag(
@@ -278,14 +232,12 @@ def set_django_secret_key(file_path):
 
 def set_django_admin_url(file_path):
     """
-    sets a flag in a file to define the Django administration URL prefix using a
-    format string with digits and ASCII letters, returning the modified URL prefix.
 
     Args:
-        file_path (str): 32-digit hexadecimal code for the Django admin URL.
+        file_path ():
 
     Returns:
-        str: a pre-formatted URL for the Django administration interface.
+        :
 
     """
     django_admin_url = set_flag(
@@ -300,10 +252,9 @@ def set_django_admin_url(file_path):
 
 def generate_random_user():
     """
-    generates a 32-character random string using ASCII letters only.
 
     Returns:
-        str: a 32-character string of random ASCII letters.
+        :
 
     """
     return generate_random_string(length=32, using_ascii_letters=True)
@@ -311,15 +262,12 @@ def generate_random_user():
 
 def generate_postgres_user(debug=False):
     """
-    generates a PostgreSQL user account with a unique name and password, using
-    either the `DEBUG_VALUE` or a randomly generated string for creation when
-    `debug` is `False`.
 
     Args:
-        debug (bool): state of generating high-quality documentation
+        debug ():
 
     Returns:
-        str: a randomized string of letters and digits for a PostgreSQL user.
+        :
 
     """
     return DEBUG_VALUE if debug else generate_random_user()
@@ -327,16 +275,13 @@ def generate_postgres_user(debug=False):
 
 def set_postgres_user(file_path, value):
     """
-    sets a environment variable related to PostgreSQL users.
 
     Args:
-        file_path (str): path to the configuration file where the Postgres user
-            setting is stored.
-        value (str): new PostgreSQL user to set.
+        file_path ():
+        value ():
 
     Returns:
-        str: a string indicating whether the PostgreSQL user was set successfully
-        or not.
+        :
 
     """
     postgres_user = set_flag(file_path, "!!!SET POSTGRES_USER!!!", value=value)
@@ -345,16 +290,13 @@ def set_postgres_user(file_path, value):
 
 def set_postgres_password(file_path, value=None):
     """
-    sets a password for PostgreSQL using environment variable settings.
 
     Args:
-        file_path (str): file path where the PostgreSQL password is stored.
-        value (int): 64-character PostgreSQL password to be set, with the requirement
-            that it contains only ASCII letters and must be exactly 64 characters
-            long.
+        file_path ():
+        value ():
 
     Returns:
-        str: a securely stored PostgreSQL password.
+        :
 
     """
     postgres_password = set_flag(
@@ -370,24 +312,13 @@ def set_postgres_password(file_path, value=None):
 
 def set_celery_flower_user(file_path, value):
     """
-    sets a flag in a file path with a specific key to set the Celery flower user
-    to the provided value.
 
     Args:
-        file_path (str): file path where the Celery flower user setting should be
-            written or read from.
-        value (str): new value of the `celery_flower_user` flag that should be set
-            for the given file path.
+        file_path ():
+        value ():
 
     Returns:
-        `set` value.: a boolean value indicating whether the `celery_flower_user`
-        flag has been set to the provided value.
-        
-        		- `celery_flower_user`: The value set for the `CELERY_FLOWER_USER`
-        environment variable. This is an atomic property, which means it can only
-        have one of two possible values: either `True` or `False`.
-        		- `file_path`: The path to the file where the flag was set. This property
-        is also atomic and has a value that is either a string or null.
+        :
 
     """
     celery_flower_user = set_flag(
@@ -398,15 +329,13 @@ def set_celery_flower_user(file_path, value):
 
 def set_celery_flower_password(file_path, value=None):
     """
-    sets a password for Celery Flowers using a file path and a specified value.
 
     Args:
-        file_path (str): file path where the CELERY_FLOWER_PASSWORD flag is stored.
-        value (int): 64-digit password to be set for Celery Flower, and it is used
-            by the `set_flag()` function to store the password in the file path provided.
+        file_path ():
+        value ():
 
     Returns:
-        str: a password for Celery Flower.
+        :
 
     """
     celery_flower_password = set_flag(
@@ -422,10 +351,9 @@ def set_celery_flower_password(file_path, value=None):
 
 def append_to_gitignore_file(s):
     """
-    adds a given string to the end of the `.gitignore` file.
 
     Args:
-        s (str): string of lines to be appended to the `.gitignore` file.
+        s ():
 
     """
     with open(".gitignore", "a") as gitignore_file:
@@ -435,19 +363,11 @@ def append_to_gitignore_file(s):
 
 def set_flags_in_envs(postgres_user, celery_flower_user, debug=False):
     """
-    sets environment variables for Django and PostgreSQL users, passwords, and
-    Celery Flower user, depending on whether the environment is local or production.
 
     Args:
-        postgres_user (str): PostgreSQL user account name to be set for the local
-            environment and the production environment respectively in the function
-            `set_flags_in_envs`.
-        celery_flower_user (str): user name for Celery flower, which is used to
-            set the user name for Celery flower instance in the production environment.
-        debug (bool): Debug Value, which is used to set the secret key, admin URL,
-            PostgreSQL user and password, and Celery Flower user and password
-            accordingly in the local and production environments, with different
-            values being set when `debug` is True or False.
+        postgres_user ():
+        celery_flower_user ():
+        debug ():
 
     """
     local_django_envs_path = os.path.join(".envs", ".local", ".django")
@@ -479,8 +399,6 @@ def set_flags_in_envs(postgres_user, celery_flower_user, debug=False):
 
 def set_flags_in_settings_files():
     """
-    sets the Django secret key in settings files located at `config/settings/local.py`
-    and `config/settings/test.py`.
 
     """
     set_django_secret_key(os.path.join("config", "settings", "local.py"))
@@ -489,7 +407,6 @@ def set_flags_in_settings_files():
 
 def remove_envs_and_associated_files():
     """
-    removes the `.envs` directory and the file `merge_production_dotenvs_in_dotenv.py`.
 
     """
     shutil.rmtree(".envs")
@@ -498,7 +415,6 @@ def remove_envs_and_associated_files():
 
 def remove_celery_compose_dirs():
     """
-    removes two directory paths related to Celery.
 
     """
     shutil.rmtree(os.path.join("compose", "local", "django", "celery"))
@@ -507,7 +423,6 @@ def remove_celery_compose_dirs():
 
 def remove_node_dockerfile():
     """
-    removes the directory `os.path.join("compose", "local", "node")`.
 
     """
     shutil.rmtree(os.path.join("compose", "local", "node"))
@@ -515,7 +430,6 @@ def remove_node_dockerfile():
 
 def remove_aws_dockerfile():
     """
-    removes the directory `os.path.join("compose", "production", "aws")
 
     """
     shutil.rmtree(os.path.join("compose", "production", "aws"))
@@ -523,9 +437,6 @@ def remove_aws_dockerfile():
 
 def remove_drf_starter_files():
     """
-    removes files related to the Django Rest Framework (DRF) starter project from
-    a directory. Specifically, it removes the `api_router.py` file and deletes the
-    `users` directory containing the DRF project structure.
 
     """
     os.remove(os.path.join("config", "api_router.py"))
@@ -534,8 +445,6 @@ def remove_drf_starter_files():
 
 def main():
     """
-    initializes a project based on cookiecutter parameters, removes unnecessary
-    files and configures GIT ignores to preserve locally useful files.
 
     """
     debug = "{{ cookiecutter.debug }}".lower() == "y"

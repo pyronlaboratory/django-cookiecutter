@@ -4,7 +4,6 @@ import sys
 
 def dummy():
     """
-    has no functional purpose, it simply exists to consume execution time.
 
     """
     pass
