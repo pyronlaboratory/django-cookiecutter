@@ -3,10 +3,6 @@ import os
 import sys
 
 def dummy():
-    """
-    The function `dummy()` does nothing and merely passes by not performing any operation.
-
-    """
     pass
 
 

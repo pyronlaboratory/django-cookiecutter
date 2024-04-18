@@ -30,12 +30,10 @@ SUCCESS = "\x1b[1;32m [SUCCESS]: "
 
 DEBUG_VALUE = "debug"
 
-
 def remove_open_source_files():
     file_names = ["CONTRIBUTORS.txt", "LICENSE"]
     for file_name in file_names:
         os.remove(file_name)
-
 
 def remove_gplv3_files():
     file_names = ["COPYING"]
